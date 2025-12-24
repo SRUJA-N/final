@@ -48,9 +48,9 @@ By solving these interconnected problems, the Library Book Management System pro
 
 The design of the Library Book Management System follows object-oriented principles, with a clear separation of concerns between data representation and business logic. The system is structured around two primary classes: the Book class and the LibraryBookManager class, each serving distinct but complementary roles.
 
-The Book class encapsulates the properties and behaviors of individual books. It includes private attributes for title, author, total copies, and available copies, ensuring data encapsulation. Public methods provide controlled access to these attributes and implement core book-related operations. The issueBook() and returnBook() methods handle the logic for borrowing and returning books, including validation to prevent invalid operations such as issuing a book when none are available or returning a book when all copies are already in the library.
+The Book class encapsulates the properties and behaviors of individual books. It includes private attributes for title, author, total copies, and available copies, ensuring data encapsulation. Public methods provide controlled access to these attributes and implement core book-related operations. The `issueBook()` and `returnBook()` methods handle the logic for borrowing and returning books, including validation to prevent invalid operations such as issuing a book when none are available or returning a book when all copies are already in the library.
 
-The LibraryBookManager class serves as the main controller, managing the overall book inventory. It employs a HashMap with string keys for efficient storage and retrieval of Book objects. The generateBookId() method creates unique identifiers by combining and normalizing the title and author, ensuring consistent identification across operations.
+The LibraryBookManager class serves as the main controller, managing the overall book inventory. It employs a HashMap with string keys for efficient storage and retrieval of Book objects. The `generateBookId()` method creates unique identifiers by combining and normalizing the title and author, ensuring consistent identification across operations.
 
 Key design decisions include:
 - Use of HashMap for O(1) average-time complexity lookups
@@ -65,50 +65,19 @@ The code structure promotes maintainability, with each method having a single re
 
 Performance considerations include the efficiency of HashMap operations and the simplicity of string manipulations for ID generation. The system handles edge cases like empty inventories or attempts to operate on non-existent books, providing informative feedback in all scenarios.
 
-### Flowchart
+### System Flow
 
 The system follows a structured flow for user interactions:
 
-```
-Start
-  |
-  v
-Initialize LibraryBookManager
-  |
-  v
-Add Demo Books
-  |
-  v
-Display Menu
-  |
-  +---------------------+
-  | 1. Add Book        |
-  | 2. Check Availability|
-  | 3. Issue Book      |
-  | 4. Return Book     |
-  | 5. Display All Books|
-  | 6. Exit            |
-  +---------------------+
-          |
-          v
-    User Input
-          |
-          v
-    Process Choice
-          |
-  +-------+-------+-------+-------+-------+
-  |       |       |       |       |       |
-  v       v       v       v       v       v
-Add     Check   Issue   Return  Display Exit
-Book    Avail   Book    Book    Books
-  |       |       |       |       |
-  v       v       v       v       v
-Update  Display Issue/  Update  Show    End
-Inventory Status Return  Inventory All
-                        Books
-```
+1. **Start**: Initialize LibraryBookManager
+2. **Add Demo Books**: Pre-load sample data
+3. **Display Menu**: Show options (Add Book, Check Availability, Issue Book, Return Book, Display All Books, Exit)
+4. **User Input**: Get choice from user
+5. **Process Choice**: Route to appropriate method based on selection
+6. **Execute Operation**: Perform the selected action
+7. **Repeat**: Return to menu unless exit is chosen
 
-### Algorithm
+### Algorithms
 
 #### Algorithm for Adding a Book:
 1. Prompt user for title, author, and number of copies
@@ -254,7 +223,7 @@ public class LibraryBookManager {
 }
 ```
 
-The design and implementation section highlights the system's architecture, key components, and technical details. The flowchart provides a visual representation of the program's flow, while the algorithms offer step-by-step procedures for each operation. Code snippets illustrate the actual implementation, demonstrating how the design principles are translated into working software.
+The design and implementation section highlights the system's architecture, key components, and technical details. The system flow provides a clear overview of the program's operation, while the algorithms offer step-by-step procedures for each operation. Code snippets illustrate the actual implementation, demonstrating how the design principles are translated into working software.
 
 ## Results
 
@@ -317,5 +286,3 @@ Potential future enhancements include:
 The system's modular architecture makes these enhancements feasible without requiring a complete redesign. The separation of concerns between the Book class and LibraryBookManager class allows for independent development of new features.
 
 In conclusion, the Library Book Management System stands as a testament to the effectiveness of well-structured software in solving practical problems. It bridges the gap between manual processes and digital automation, providing libraries with a reliable tool for efficient book management. The project's success validates the chosen technologies and design patterns, offering a blueprint for similar applications in other domains.
-#   f i n a l  
- 
